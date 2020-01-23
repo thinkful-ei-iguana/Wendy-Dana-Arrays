@@ -1,10 +1,11 @@
-import memory from "./memory";
+const memory = require("./memory");
 
-export default class Array {
+class Array {
   constructor() {
     this.length = 0;
     this._capacity = 0;
-    this.ptr = memory.allocate(this.length);
+    this.memory = new memory();
+    this.ptr = this.memory.allocate(this.length);
   }
 
   push(value) {
@@ -12,19 +13,21 @@ export default class Array {
       this._resize((this.length + 1) * Array.SIZE_RATIO);
     }
 
-    memory.set(this.ptr + this.length, value);
+    this.memory.set(this.ptr + this.length, value);
     this.length++;
   }
 
   _resize(size) {
     const oldPtr = this.ptr;
-    this.ptr = memory.allocate(size);
+    this.ptr = this.memory.allocate(size);
     if (this.ptr === null) {
       throw new Error("Out of memory");
     }
-    memory.copy(this.ptr, oldPtr, this.length);
-    memory.free(oldPtr);
+    this.memory.copy(this.ptr, oldPtr, this.length);
+    this.memory.free(oldPtr);
     this._capacity = size;
   }
 }
 Array.SIZE_RATIO = 3;
+
+module.exports = Array;
