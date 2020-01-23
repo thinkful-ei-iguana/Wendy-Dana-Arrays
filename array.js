@@ -1,6 +1,6 @@
 import memory from "./memory";
 
-class Array {
+export default class Array {
   constructor() {
     this.length = 0;
     this._capacity = 0;
