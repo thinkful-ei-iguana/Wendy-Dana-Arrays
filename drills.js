@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-const Array = require("./array");
+const Array = require('./array');
 
 function main() {
   Array.SIZE_RATIO = 3;
@@ -21,6 +21,11 @@ function main() {
   arr.push(47);
   arr.push(30);
   arr.push(31);
+  console.log(arr);
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.pop();
   console.log(arr);
 }
 
