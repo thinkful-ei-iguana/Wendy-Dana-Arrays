@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-const Array = require('./array');
+const Array = require("./array");
 
 function main() {
   Array.SIZE_RATIO = 3;
@@ -8,24 +8,26 @@ function main() {
   let arr = new Array();
 
   // Add an item to the array
-  arr.push(3);
-  arr.push(5);
-  arr.push(15);
-  arr.push(19);
-  arr.push(45);
-  arr.push(10);
-  arr.push(29);
-  arr.push(47);
-  arr.push(30);
-  arr.push(29);
-  arr.push(47);
-  arr.push(30);
-  arr.push(31);
-  console.log(arr);
-  arr.pop();
-  arr.pop();
-  arr.pop();
-  arr.pop();
+  // arr.push(3);
+  // arr.push(5);
+  // arr.push(15);
+  // arr.push(19);
+  // arr.push(45);
+  // arr.push(10);
+  // arr.push(29);
+  // arr.push(47);
+  // arr.push(30);
+  // arr.push(29);
+  // arr.push(47);
+  // arr.push(30);
+  // arr.push(31);
+  // console.log(arr);
+  // arr.pop();
+  // arr.pop();
+  // arr.pop();
+  // arr.pop();
+  // console.log(arr);
+  arr.push(32);
   console.log(arr);
 }
 
@@ -35,4 +37,6 @@ function main() {
 //Array {length: 6, _capacity: 12, memory: Memory, ptr: 3}
 
 //Array {length: 9, _capacity: 12, memory: Memory, ptr: 3}
+
+//after pop x3 ==> Array {length: 9, _capacity: 39, memory: Memory, ptr: 15}
 main();
